@@ -15,11 +15,11 @@ class SceneManager {
       224 * PARAMS.SCALE
     );
 
-    this.player = new Player(
-      this.game,
-      2.5 * PARAMS.BLOCKWIDTH,
-      0 * PARAMS.BLOCKWIDTH
-    );
+    // this.player = new Player(
+    //   this.game,
+    //   2.5 * PARAMS.BLOCKWIDTH,
+    //   0 * PARAMS.BLOCKWIDTH
+    // );
 
     this.loadLevelOne(2.5 * PARAMS.BLOCKWIDTH, 0 * PARAMS.BLOCKWIDTH);
   }
