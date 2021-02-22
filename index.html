@@ -7,37 +7,57 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Press+Start+2P"
     />
-    <style>
-      body {
-        font-family: "Press Start 2P", serif;
-        font-size: 24px;
-      }
-    </style>
+
     <script type="text/javascript" src="./assetmanager.js"></script>
     <script type="text/javascript" src="./timer.js"></script>
     <script type="text/javascript" src="./gameengine.js"></script>
     <script type="text/javascript" src="./animator.js"></script>
     <script type="text/javascript" src="./sant.js"></script>
-    <script type="text/javascript" src="./bricks.js"></script>
-    <script type="text/javascript" src="./items.js"></script>
-    <script type="text/javascript" src="./enemies.js"></script>
-    <script type="text/javascript" src="./background.js"></script>
+    <script type="text/javascript" src="./brick.js"></script>
     <script type="text/javascript" src="./sceneManager.js"></script>
     <script type="text/javascript" src="./util.js"></script>
     <script type="text/javascript" src="./boundingbox.js"></script>
-    <script type="text/javascript" src="./projectiles.js"></script>
+
     <script type="text/javascript" src="./main.js"></script>
+    <link type="text/css" rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div>Sant Brothers <br /></div>
-    <canvas
-      id="gameWorld"
-      width="768"
-      height="768"
-      style="background: black"
-      tabindex="0"
-      autofocus
-    ></canvas>
+    <div class="container">
+      <div class="row">
+        <div class="columnleft">
+          <div class="title">Sant Brothers <br /></div>
+          <canvas
+            id="gameWorld"
+            width="900"
+            height="768"
+            style="background: black"
+            tabindex="0"
+            autofocus
+          >
+          </canvas>
+        </div>
+
+        <div class="columnright">
+          <h3 class="title">Direction</h3>
+          <div>
+            <h4>1. Controller</h4>
+            <p><strong>D</strong> walks forward</p>
+            <p><strong>A</strong> walks backward</p>
+            <p><strong>X</strong> jumps</p>
+            <p><strong>C</strong> shoots</p>
+          </div>
+          <div>
+            <h4>2. Game direction</h4>
+            <p>The game has two levels which have differently obticals.</p>
+            <p>
+              The player will upgrade the power guns by passing two objects
+              which are Angel and Panda. Angel will give the player a random
+              weapon and Panda will give the player an extra life and weapon
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div>
       <br />
