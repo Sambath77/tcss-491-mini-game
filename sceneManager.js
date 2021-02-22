@@ -15,12 +15,6 @@ class SceneManager {
       224 * PARAMS.SCALE
     );
 
-    // this.player = new Player(
-    //   this.game,
-    //   2.5 * PARAMS.BLOCKWIDTH,
-    //   0 * PARAMS.BLOCKWIDTH
-    // );
-
     this.loadLevelOne(2.5 * PARAMS.BLOCKWIDTH, 0 * PARAMS.BLOCKWIDTH);
   }
 
@@ -35,17 +29,9 @@ class SceneManager {
     this.game.entities = [];
     this.x = 0;
 
-    //this.game.addEntity(new Wall(this.game, 0, PARAMS.BLOCKWIDTH));
-
     for (let i = 1; i < 50; i++) {
       this.game.addEntity(new Wall(this.game, 0, -i * PARAMS.SCREEN_HEIGHT));
     }
-
-    // let brick = new Brickmoved(this.game, 0, 10);
-    // this.game.addEntity(brick);
-
-    // brick = new Brickmoved(this.game, 100, 10);
-    // this.game.addEntity(brick);
 
     for (let i = 1; i < 50; i++) {
       this.game.addEntity(new Brickmoved(this.game, i * 100 + 10, i * 10 + 10));
