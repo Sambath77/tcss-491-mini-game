@@ -6,6 +6,8 @@ ASSET_MANAGER.queueDownload('./sprites/ground.png');
 
 ASSET_MANAGER.queueDownload('./sprites/block3.png');
 
+ASSET_MANAGER.queueDownload('./sprites/my_wall.png');
+
 ASSET_MANAGER.downloadAll(function () {
   var gameEngine = new GameEngine();
 
