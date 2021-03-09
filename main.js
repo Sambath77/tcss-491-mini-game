@@ -2,9 +2,15 @@ const ASSET_MANAGER = new AssetManager();
 
 ASSET_MANAGER.queueDownload('./sprites/plane.png');
 
-ASSET_MANAGER.queueDownload('./sprites/ground.png');
+ASSET_MANAGER.queueDownload('./sprites/my_wall.png');
 
 ASSET_MANAGER.queueDownload('./sprites/block3.png');
+
+ASSET_MANAGER.queueDownload('./sprites/block4.png');
+
+ASSET_MANAGER.queueDownload('./sprites/sant-left.png');
+
+ASSET_MANAGER.queueDownload('./sprites/sant-right.png');
 
 ASSET_MANAGER.downloadAll(function () {
   var gameEngine = new GameEngine();

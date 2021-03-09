@@ -44,34 +44,34 @@ class GameEngine {
     var that = this;
 
     this.ctx.canvas.addEventListener(
-      "keydown",
+      'keydown',
       function (e) {
         switch (e.code) {
-          case "ArrowLeft":
-          case "KeyA":
+          case 'ArrowLeft':
+          case 'KeyA':
             that.left = true;
             break;
-          case "ArrowRight":
-          case "KeyD":
+          case 'ArrowRight':
+          case 'KeyD':
             that.right = true;
             break;
-          case "ArrowUp":
-          case "KeyW":
+          case 'ArrowUp':
+          case 'KeyW':
             that.up = true;
             break;
-          case "ArrowDown":
-          case "KeyS":
+          case 'ArrowDown':
+          case 'KeyS':
             that.down = true;
             break;
-          case "KeyZ":
-          case "Comma":
+          case 'KeyZ':
+          case 'Comma':
             that.B = true;
             break;
-          case "KeyX":
-          case "Period":
+          case 'Space':
+          case 'Period':
             that.A = true;
             break;
-          case "KeyC":
+          case 'KeyC':
             that.attack = true;
             break;
         }
@@ -80,34 +80,34 @@ class GameEngine {
     );
 
     this.ctx.canvas.addEventListener(
-      "keyup",
+      'keyup',
       function (e) {
         switch (e.code) {
-          case "ArrowLeft":
-          case "KeyA":
+          case 'ArrowLeft':
+          case 'KeyA':
             that.left = false;
             break;
-          case "ArrowRight":
-          case "KeyD":
+          case 'ArrowRight':
+          case 'KeyD':
             that.right = false;
             break;
-          case "ArrowUp":
-          case "KeyW":
+          case 'ArrowUp':
+          case 'KeyW':
             that.up = false;
             break;
-          case "ArrowDown":
-          case "KeyS":
+          case 'ArrowDown':
+          case 'KeyS':
             that.down = false;
             break;
-          case "KeyZ":
-          case "Comma":
+          case 'KeyZ':
+          case 'Comma':
             that.B = false;
             break;
-          case "KeyX":
-          case "Period":
+          case 'Space':
+          case 'Period':
             that.A = false;
             break;
-          case "KeyC":
+          case 'KeyC':
             that.attack = false;
             break;
         }
