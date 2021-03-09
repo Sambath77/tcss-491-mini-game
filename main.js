@@ -2,7 +2,7 @@ const ASSET_MANAGER = new AssetManager();
 
 ASSET_MANAGER.queueDownload('./sprites/plane.png');
 
-ASSET_MANAGER.queueDownload('./sprites/ground.png');
+ASSET_MANAGER.queueDownload('./sprites/my_wall.png');
 
 ASSET_MANAGER.queueDownload('./sprites/block3.png');
 

@@ -4,8 +4,9 @@ class SceneManager {
     this.game.camera = this;
     this.game.mapMaxDistance = 50;
     this.game.isMaxDistance = false;
+    this.game.isFightingBoss = false;
     this.x = 0;
-    this.y = -PARAMS.BLOCKWIDTH;
+    //this.y = -PARAMS.BLOCKWIDTH;
     this.score = 0;
 
     this.minimap = new Minimap(
@@ -15,6 +16,11 @@ class SceneManager {
       224 * PARAMS.SCALE
     );
 
+    this.player = new Player(
+      this.game,
+      2.5 * PARAMS.BLOCKWIDTH,
+      0 * PARAMS.BLOCKWIDTH
+    );
     this.loadLevelOne(2.5 * PARAMS.BLOCKWIDTH, 0 * PARAMS.BLOCKWIDTH);
   }
 
@@ -29,31 +35,26 @@ class SceneManager {
     this.game.entities = [];
     this.x = 0;
 
-    for (let i = 1; i < 50; i++) {
-      this.game.addEntity(new Wall(this.game, 0, -i * PARAMS.SCREEN_HEIGHT));
+    let background = new Wall(this.game, 0, PARAMS.BLOCKWIDTH, 0);
+    this.game.addEntity(background);
+
+    for (let i = 0; i < PARAMS.BLOCKWIDTH; i++) {
+      background = new Wall(
+        this.game,
+        PARAMS.BLOCKWIDTH * 25 * i,
+        PARAMS.BLOCKWIDTH,
+        25
+      );
+      this.game.addEntity(background);
     }
 
     for (let i = 1; i < 50; i++) {
       this.game.addEntity(new Brickmoved(this.game, i * 100 + 10, i * 10 + 10));
     }
 
-    // for (let i = 1; i < 50; i++) {
-    //   this.game.addEntity(
-    //     new Brickmoved(this.game, i * 100 + 10, i * 100 + 10)
-    //   );
-    // }
-    // for (let i = 1; i < 500; i++) {
-    //   this.game.addEntity(
-    //     new Brickmoved(this.game, 0, 8 * PARAMS.BLOCKWIDTH * i)
-    //   );
-    // }
-    // let brick = new Brickmoved(this.game, 400, 8 * PARAMS.BLOCKWIDTH);
-    // this.game.addEntity(brick);
-    // brick = new Brickmoved(this.game, 0, 10 * PARAMS.BLOCKWIDTH);
-    // this.game.addEntity(brick);
-    // this.angel.x = x;
-    // this.angel.y = this.angel.size ? y - PARAMS.BLOCKWIDTH : y;
-    // this.game.addEntity(this.angel);
+    this.player.x = x;
+    this.player.y = this.player.size ? y - PARAMS.BLOCKWIDTH : y;
+    this.game.addEntity(this.player);
   }
 
   update() {
@@ -61,11 +62,11 @@ class SceneManager {
 
     let midpoint = PARAMS.CANVAS_WIDTH / 2 - PARAMS.BLOCKWIDTH / 2;
 
-    // if (this.x < this.sant.x - midpoint) this.x = this.sant.x - midpoint;
+    if (this.x < this.player.x - midpoint) this.x = this.player.x - midpoint;
 
-    // if (this.x >= this.game.mapMaxDistance) {
-    //   this.x = this.game.mapMaxDistance;
-    // }
+    if (this.x >= this.game.mapMaxDistance) {
+      this.x = this.game.mapMaxDistance;
+    }
   }
 
   draw(ctx) {}
