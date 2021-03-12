@@ -5,7 +5,7 @@ class SceneManager {
     this.game.mapMaxDistance = 9000;
     this.game.isMaxDistance = false;
     this.x = 0;
-    //this.y = -PARAMS.BLOCKWIDTH;
+    this.y = -PARAMS.BLOCKWIDTH;
     this.score = 0;
 
     this.minimap = new Minimap(
@@ -47,32 +47,62 @@ class SceneManager {
       this.game.addEntity(background);
     }
 
-    // let brick = new BrickLevelOne(
-    //   this.game,
-    //   10 * 0 * PARAMS.BLOCKWIDTH,
-    //   10 * PARAMS.BLOCKWIDTH
-    // );
-    // this.game.addEntity(brick);
+    let brick = new BrickLevelOne(
+      this.game,
+      10 * 0 * PARAMS.BLOCKWIDTH,
+      8 * PARAMS.BLOCKWIDTH
+    );
+
+    this.game.addEntity(brick);
+    brick = new BrickLevelOne(
+      this.game,
+      10 * 0 * PARAMS.BLOCKWIDTH,
+      5 * PARAMS.BLOCKWIDTH
+    );
+    this.game.addEntity(brick);
+
+    brick = new BrickLevelOne(
+      this.game,
+      10 * 0 * PARAMS.BLOCKWIDTH,
+      3 * PARAMS.BLOCKWIDTH
+    );
+
+    this.game.addEntity(brick);
+    brick = new BrickLevelOne(
+      this.game,
+      10 * 0 * PARAMS.BLOCKWIDTH,
+      1 * PARAMS.BLOCKWIDTH
+    );
+
+    this.game.addEntity(brick);
+
+    brick = new BrickLevelOne(
+      this.game,
+      10 * 0 * PARAMS.BLOCKWIDTH,
+      -1 * PARAMS.BLOCKWIDTH
+    );
+
+    this.game.addEntity(brick);
 
     for (let i = 0; i < this.game.mapMaxDistance; i++) {
       this.game.addEntity(
         new BrickLevelOne(
           this.game,
-          10 * i * PARAMS.BLOCKWIDTH,
+          10 * i * PARAMS.BLOCKWIDTH + 20,
           11 * PARAMS.BLOCKWIDTH
         )
       );
     }
 
-    for (let i = 0; i < this.game.mapMaxDistance; i++) {
-      this.game.addEntity(
-        new BrickLevelOne(
-          this.game,
-          10 * i * PARAMS.BLOCKWIDTH + 200,
-          8 * PARAMS.BLOCKWIDTH
-        )
-      );
-    }
+    // for (let i = 0; i < this.game.mapMaxDistance; i++) {
+    //   this.game.addEntity(
+    //     new BrickLevelOne(
+    //       this.game,
+    //       10 * PARAMS.BLOCKWIDTH + 300,
+    //       -8 * i * PARAMS.BLOCKWIDTH
+    //     )
+    //   );
+    // }
 
     for (
       let i = 0;
@@ -82,8 +112,8 @@ class SceneManager {
       this.game.addEntity(
         new Brickmoved(
           this.game,
-          PARAMS.BLOCKWIDTH * 10 * i + 1000,
-          PARAMS.BLOCKWIDTH * 10
+          PARAMS.BLOCKWIDTH * 10 + 1000,
+          PARAMS.BLOCKWIDTH * 10 * i + 100
         )
       );
     }
@@ -98,7 +128,7 @@ class SceneManager {
 
     let midpoint = PARAMS.CANVAS_WIDTH / 2 - PARAMS.BLOCKWIDTH / 2;
 
-    if (this.x < this.player.x - midpoint) this.x = this.player.x - midpoint;
+    if (this.y < this.player.y - midpoint) this.y = this.player.y - midpoint;
 
     if (this.x >= this.game.mapMaxDistance) {
       this.x = this.game.mapMaxDistance;

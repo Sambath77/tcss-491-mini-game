@@ -67,7 +67,7 @@ class GameEngine {
           case 'Comma':
             that.B = true;
             break;
-          case 'Space':
+          case 'KeyX':
           case 'Period':
             that.A = true;
             break;
@@ -103,7 +103,7 @@ class GameEngine {
           case 'Comma':
             that.B = false;
             break;
-          case 'Space':
+          case 'KeyX':
           case 'Period':
             that.A = false;
             break;

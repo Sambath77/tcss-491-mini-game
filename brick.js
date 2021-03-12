@@ -13,8 +13,8 @@ class Wall {
       240,
       640,
       240,
-      this.x - this.game.camera.x + PARAMS.BLOCKWIDTH * this.z,
-      this.y - 280,
+      this.x,
+      this.y - this.game.camera.x + PARAMS.BLOCKWIDTH * this.z,
       PARAMS.BLOCKWIDTH * 25,
       PARAMS.BLOCKWIDTH * 25
     );
@@ -80,16 +80,16 @@ class Brickmoved {
     this.animation.drawFrame(
       this.game.clockTick,
       ctx,
-      this.x - this.game.camera.x,
-      this.y,
+      this.x,
+      this.y - this.game.camera.x,
       PARAMS.SCALE
     );
 
     if (PARAMS.DEBUG) {
       ctx.strokeStyle = 'Red';
       ctx.strokeRect(
-        this.BB.x - this.game.camera.x,
-        this.BB.y,
+        this.BB.x,
+        this.BB.y - this.game.camera.x,
         this.BB.width,
         this.BB.height
       );
@@ -103,8 +103,8 @@ class BrickLevelOne {
     this.spritesheet = ASSET_MANAGER.getAsset('./sprites/block3.png');
 
     this.BB = new BoundingBox(
-      this.x + PARAMS.BLOCKWIDTH,
-      this.y,
+      this.x + PARAMS.BLOCKWIDTH - 50,
+      this.y + 50,
       PARAMS.BLOCKWIDTH * 3,
       PARAMS.BLOCKWIDTH
     );
@@ -153,8 +153,8 @@ class BrickLevelOne {
       92,
       58,
       14,
-      this.x + PARAMS.BLOCKWIDTH - this.game.camera.x,
-      this.y,
+      this.x,
+      this.y + PARAMS.BLOCKWIDTH - this.game.camera.x,
       PARAMS.BLOCKWIDTH * 3,
       PARAMS.BLOCKWIDTH
     );
@@ -162,8 +162,8 @@ class BrickLevelOne {
     if (PARAMS.DEBUG) {
       ctx.strokeStyle = 'Red';
       ctx.strokeRect(
-        this.BB.x - this.game.camera.x,
-        this.BB.y,
+        this.BB.x,
+        this.BB.y - this.game.camera.x,
         this.BB.width,
         this.BB.height
       );
